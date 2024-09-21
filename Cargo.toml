@@ -1,0 +1,26 @@
+[package]
+name = "stylus-transparent-proxy"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.81"
+
+[dependencies]
+alloy-primitives = "=0.7.6"
+alloy-sol-macro = "=0.7.6"
+alloy-sol-types = "=0.7.6"
+hex-literal = "0.4.1"
+stylus-sdk = "0.6.0"
+
+[[bin]]
+name = "stylus-transparent-proxy"
+
+[profile.release]
+codegen-units = 1
+panic = "abort"
+opt-level = "z"
+strip = true
+lto = true
+debug = false
+rpath = false
+debug-assertions = false
+incremental = false
